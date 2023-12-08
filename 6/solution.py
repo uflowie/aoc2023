@@ -13,7 +13,16 @@ def solve(times, records):
     return reduce(
         mul,
         (
-            len([x for x in [i * (time - i) for i in range(time)] if x > record])
+            len(
+                [
+                    distance
+                    for distance in [
+                        press_duration * (time - press_duration)
+                        for press_duration in range(time)
+                    ]
+                    if distance > record
+                ]
+            )
             for time, record in zip(times, records)
         ),
         1,
