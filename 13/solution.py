@@ -13,8 +13,6 @@ def score(pattern, target_diff):
         half_len = min(i, len(pattern) - i)
         top = pattern[i - half_len : i]
         bottom = pattern[i : i + half_len]
-        # if top == list(reversed(bottom)):
-        #     return i
         if Levenshtein.distance(str(top), str(list(reversed(bottom)))) == target_diff:
             return i
     return 0
