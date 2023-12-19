@@ -14,7 +14,7 @@ def can_move(straight_moves, direction, new_direction):
 
 def can_move2(straight_moves, direction, new_direction):
     if direction == new_direction and straight_moves >= 10:
-        return False  # Can't move more than 3 blocks straight
+        return False  # Can't move more than 10 blocks straight
     if direction != (0, 0) and direction == (-new_direction[0], -new_direction[1]):
         return False  # Can't move in opposite direction
     if direction != (0, 0) and direction != new_direction and straight_moves < 4:
@@ -31,7 +31,7 @@ def minimum_heat_loss(map_data, move_func):
     while heap:
         heat_loss, row, col, direction, straight_moves = heappop(heap)
 
-        # If we reach the bottom-right corner, return the heat loss
+        # If we reach the bottom-right corner, append loss to losses
         if row == rows - 1 and col == cols - 1:
             losses.append(heat_loss)
             continue
