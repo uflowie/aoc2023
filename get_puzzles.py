@@ -27,5 +27,5 @@ for day in range(1, current_day + 1):
     # create solution file
     with open(f'{day}/solution.py', 'w') as f:
         f.write(f"with open('{input_filename}', 'r') as f:\n")
-        f.write(f"    [line.strip() for line in f.readlines()]\n")
+        f.write(f"    puzzle_input = [line.strip() for line in f.readlines()]\n")
 
