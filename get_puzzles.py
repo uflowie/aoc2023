@@ -9,7 +9,7 @@ with open('session_cookie.txt', 'r') as f:
     session_cookie = f.read()
 
 
-for day in range(1, current_day + 1):
+for day in range(1, min(25, current_day + 1)):
     # check if directory exists
     if os.path.exists(f'{day}'):
         continue
